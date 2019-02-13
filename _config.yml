@@ -24,6 +24,25 @@ allowsearch: true
 disqus_shortname: aboutashu
 google_analytics: UA-72862926-1
 
+# Settings for comments helper
+# Set 'provider' to the comment provider you want to use.
+# Set 'provider' to false to turn commenting off globally.
+#
+comments :
+  provider : disqus
+  disqus :
+    short_name : jekyllbootstrap
+  livefyre :
+    site_id : 123
+  intensedebate :
+    account : 123abc
+  facebook :
+    appid : 123
+    num_posts: 5
+    width: 580
+    colorscheme: light
+
+
 share:
   twitter_username: \#
   fb_appid: 000000000000
