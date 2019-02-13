@@ -7,7 +7,7 @@ categories: others
 
 <p><small>This demo page has been used from <a href="http://jasonm23.github.io/markdown-css-themes/" target="_blank">http://jasonm23.github.io/markdown-css-themes/</a>.</small></p>
 
-<h1>A First Level Header</h1><!--break-->
+<h1>A First Level Header</h1><!-- more -->
 
 <h2>A Second Level Header</h2>
 
