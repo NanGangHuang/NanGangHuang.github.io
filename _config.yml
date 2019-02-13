@@ -3,12 +3,14 @@ description: My Personal Blog
 tagline: Site Tagline
 
 # 个人信息
-author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+author : huangguang
+
+# author :
+#  name : Name Lastname
+#  email : blah@email.test
+#  github : username
+#  twitter : username
+#  feedburner : feedname
   
 logo: /NanGangHuang.github.io/static/img/avatar.png
 github: https://github.com/NanGangHuang
