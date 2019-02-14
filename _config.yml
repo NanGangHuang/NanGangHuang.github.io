@@ -1,6 +1,6 @@
 title: huanggang
 description: My Personal Blog
-# tagline: Site Tagline
+tagline: Site Tagline
 
 # 个人信息
 author : huangguang
@@ -36,7 +36,8 @@ share:
 enableTags: true
 tagarray: []
 
-# 
+excerpt_separator: '<!-- more -->'
+
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"
