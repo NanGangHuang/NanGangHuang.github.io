@@ -8,7 +8,7 @@
 	},
 	{
 		"name": "WEB",
-		"image": "placeholder.jpg",
+		"image": "web.jpg",
 		"url": "https://nanganghuang.github.io/category/web",
 		"date": "May 2019",
 		"tags": ["Angular JS","vue"]
