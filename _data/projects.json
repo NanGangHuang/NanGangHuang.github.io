@@ -1,13 +1,13 @@
 [
 	{
-		"name": "java",
+		"name": "JAVA",
 		"image": "placeholder.jpg",
 		"url": "https://nanganghuang.github.io/category/java",
 		"date": "Jan 2019",
 		"tags": ["Spring","API"]
 	},
 	{
-		"name": "web",
+		"name": "WEB",
 		"image": "placeholder.jpg",
 		"url": "https://nanganghuang.github.io/category/web",
 		"date": "May 2019",
