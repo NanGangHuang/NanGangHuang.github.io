@@ -7,5 +7,5 @@ group :jekyll_plugins do
   gem 'jekyll-watch'
   gem 'kramdown'
   gem 'rouge'
-  gem 'jekyll-admin'
+  gem 'jekyll-admin', group: :jekyll_plugins
 end
