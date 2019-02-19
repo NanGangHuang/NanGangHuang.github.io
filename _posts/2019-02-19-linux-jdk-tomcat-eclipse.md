@@ -3,7 +3,7 @@ layout: post
 title: linux下安装jdk,tomcat,eclipse，mysql及相关linux指令
 date: 2019-02-19 11:55:00
 tags: linux tomcat mysql eclipse
-categories: java
+categories: linux
 excerpt: linux mint系统安装jdk,eclipse,tomcat,mysql等基本开发工具,以及linux下如何安装使用git，如何打开eclipse
 ---
 
