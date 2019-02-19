@@ -96,3 +96,19 @@ public class Singleton {
 
 
 注：具体参考	`https://github.com/Snailclimb/JavaGuide` 设计模式板块
+
+# 代理模式
+
+**代理介绍**
+
+> 代理（Proxy）是一种设计模式， 提供了对目标对象**另外的访问方式**；即**通过代理访问目标对象**。 这样好处： **可以在目标对象实现的基础上，增强额外的功能操作。(扩展目标对象的功能)。**
+
+
+
+**代理模式【介绍、静态代理、动态代理、入门、应用】：**`https://blog.csdn.net/hon_3y/article/details/70655966`
+
+
+
+**给女朋友讲解什么是代理模式：**
+
+`https://segmentfault.com/a/1190000014764125`
