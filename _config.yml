@@ -38,8 +38,8 @@ tagarray: []
 
 excerpt_separator: '<!-- more -->'
 
-paginate: 5
-per_page: 5
+paginate: 10
+per_page: 10
 paginate_path: "/page:num/"
 markdown: kramdown
 gems: [jekyll-paginate,jekyll-gist,jekyll-admin]
