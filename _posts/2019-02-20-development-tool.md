@@ -15,3 +15,11 @@ excerpt: idea
 
 **破解idea:**`https://juejin.im/entry/5b9b1a8ff265da0ace212038`
 
+**idea调节编辑器字体的大小：**
+
+**idea配置maven:**`https://blog.csdn.net/qq_32588349/article/details/51461182`
+
+**idea导入maven项目：**`https://blog.csdn.net/iw1210/article/details/76285623`
+
+**idea导入maven项目并配置在tomcat中运行:** `https://blog.csdn.net/itguangit/article/details/78454164`
+
