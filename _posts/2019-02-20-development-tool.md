@@ -23,3 +23,11 @@ excerpt: idea
 
 **idea导入maven项目并配置在tomcat中运行:** `https://blog.csdn.net/itguangit/article/details/78454164`
 
+**idea生成get/set方法快捷键：**Alt+insert
+
+**idea快速导包快捷键：**选中需要导包的类名，ALT+Enter
+
+```
+spring.mvc.view.prefix = /WEB-INF/jsp/
+spring.mvc.view.suffix = .jsp
+```
