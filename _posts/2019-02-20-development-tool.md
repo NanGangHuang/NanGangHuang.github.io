@@ -2,9 +2,9 @@
 layout: post
 title: 开发工具的使用
 date: 2019-02-20 17:29:00
-tags: idea
+tags: idea,svn
 categories: java
-excerpt: idea
+excerpt: idea、svn的安装与使用
 ---
 
 
@@ -33,3 +33,26 @@ excerpt: idea
 
 `https://juejin.im/post/5ba3b95ee51d450e61601029`
 
+# SVN安装与使用
+
+**svn安装**
+
+安装如下两个工具![svn01](F:/MEGA/%E6%96%87%E6%A1%A3/note/skyland/svn01.png)
+
+具体安装步骤`https://blog.csdn.net/kl28978113/article/details/51514387` 查看该篇博客。
+
+安装完成后`右键`->`svn Checkout`,出现如下图
+
+![](F:/MEGA/%E6%96%87%E6%A1%A3/note/skyland/svn02.png)
+
+位置1输入项目`url`,位置2输入下载目录。
+
+**如何使用SVN上传、添加、删除文件**
+
+`https://jingyan.baidu.com/article/9f7e7ec0b031a36f29155442.html`
+
+
+
+**解决svn更新项目目录时“Error:svn: E155037: Previous operation has not finished; run 'cleanup' if it was interrupted”的报错问题**
+
+`https://www.cnblogs.com/NickyLi/p/9153852.html`
