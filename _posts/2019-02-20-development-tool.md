@@ -37,13 +37,13 @@ excerpt: idea、svn的安装与使用
 
 **svn安装**
 
-安装如下两个工具![svn01](/img/svn01.png)
+安装如下两个工具![svn01](\img\svn01.png)
 
 具体安装步骤`https://blog.csdn.net/kl28978113/article/details/51514387` 查看该篇博客。
 
 安装完成后`右键`->`svn Checkout`,出现如下图
 
-![](/img/svn02.png)
+![](\img\svn02.png)
 
 位置1输入项目`url`,位置2输入下载目录。
 
