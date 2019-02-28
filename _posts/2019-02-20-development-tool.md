@@ -27,7 +27,9 @@ excerpt: idea
 
 **idea快速导包快捷键：**选中需要导包的类名，ALT+Enter
 
-```
-spring.mvc.view.prefix = /WEB-INF/jsp/
-spring.mvc.view.suffix = .jsp
-```
+**idea重写父类方法快捷键：**ctrl+O
+
+**IDEA+Maven+Springboot:invalid bound statement (not found) 解决办法**
+
+`https://juejin.im/post/5ba3b95ee51d450e61601029`
+
