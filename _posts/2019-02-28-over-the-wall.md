@@ -1,3 +1,14 @@
+---
+layout: post
+title: 翻墙
+date: 2019-02-19 11:44:00
+tags: xx-net
+categories: others
+excerpt: x-tunnel翻墙
+---
+
+
+
 # 使用xx-net中的x_tunnel翻墙
 
 **x tunnel使用教程**
