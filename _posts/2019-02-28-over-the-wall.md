@@ -19,7 +19,7 @@ excerpt: x-tunnel翻墙
 
 `https://github.com/Alvin9999/new-pac/wiki/自建google-appid教程`
 
-
+`6aa5AVHhtZC3ev`
 
 **google账号**
 
