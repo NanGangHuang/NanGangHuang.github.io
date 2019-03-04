@@ -21,6 +21,8 @@ excerpt: 记录spring boot的学习笔记
 
 * 注入spring启动器坐标
 
+  *
+
   ```
   <!-- springBoot的启动器 -->
   <dependency>
