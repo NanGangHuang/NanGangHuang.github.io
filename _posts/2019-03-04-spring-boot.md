@@ -19,8 +19,6 @@ excerpt: 记录spring boot的学习笔记
 
 * 创建一个maven项目
 
-  
-
 * 注入spring启动器坐标
 
   ```
@@ -30,8 +28,6 @@ excerpt: 记录spring boot的学习笔记
   <artifactId>spring-boot-starter-web</artifactId>
   </dependency>
   ```
-
-  
 
 * 编写返回HelloWorld的Controller
 
@@ -70,8 +66,6 @@ excerpt: 记录spring boot的学习笔记
       }
   }
   ```
-
-  
 
 * 编写启动器类需要注意的问题
 
