@@ -33,11 +33,11 @@
 
 +  `AOF`三种策略  
    1.`always`  
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-25-31.png)
+    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-25-31.png)  
    2.`everysec`  
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-26-39.png)
+    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-26-39.png)  
    3.`no`  
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-28-16.png)
+    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-28-16.png)      
    
    |   命令   |  `always`    |  `everysec`    |   `no`   |
    | ---- | ---- | ---- | ---- |
