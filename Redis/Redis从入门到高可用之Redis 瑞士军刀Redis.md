@@ -30,29 +30,29 @@
    3.`showlog-log-slower-than`<0,不记录所有命令
    
  > 配置方法：
-   
+
    1.默认值
-   
+
    ```xml
    config get slowlog-max-len = 128
    config get slowlog-log-slower-than = 10000
    ```
-   
+
    2.修改配置文件重启
-   
+
    3.动态配置
-   
+
    ```xml
    config get slowlog-max-len 1000
    config get slowlog-log-slower-than 1000
    ```
-   
+
  > 慢查询命令：
-   
+
    1.`showlog get [n]` : 获取慢查询队列(n代表获取的条数)
-   
+
    2.`showlog len` : 获取慢查询队列长度
-   
+
    3.`showlog reset` : 清空慢查询队列
 
 ## pipeline
@@ -272,30 +272,136 @@
 
   ​	(2) 1亿用户，5千万独立
 
-  | 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
-  | -------- | -------------------- | ---------------- | ---------- |
-  | `set`    | 32位                 | 50,000,000       | 200`MB`    |
-  | `Bitmap` | 1位                  | 100,000,000      | 12.5`MB`   |
+| 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
+| -------- | -------------------- | ---------------- | ---------- |
+| `set`    | 32位                 | 50,000,000       | 200`MB`    |
+| `Bitmap` | 1位                  | 100,000,000      | 12.5`MB`   |
 
-  |          | 一天    | 一个月 | 一年   |
-  | -------- | ------- | ------ | ------ |
-  | set      | 200`M`  | 6`G`   | 72`G`  |
-  | `Bitmap` | 12.5`M` | 375`M` | 4.5`G` |
+|          | 一天    | 一个月 | 一年   |
+| -------- | ------- | ------ | ------ |
+| set      | 200`M`  | 6`G`   | 72`G`  |
+| `Bitmap` | 12.5`M` | 375`M` | 4.5`G` |
 
   ​		(3)只有10万独立用户
 
-  | 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
-  | -------- | -------------------- | ---------------- | ---------- |
-  | `set`    | 32位                 | 1,000,000        | 4`MB`      |
-  | `Bitmap` | 1位                  | 100,000,000      | 12.5`MB`   |
+| 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
+| -------- | -------------------- | ---------------- | ---------- |
+| `set`    | 32位                 | 1,000,000        | 4`MB`      |
+| `Bitmap` | 1位                  | 100,000,000      | 12.5`MB`   |
 
 +  使用经验
 
    1.`type` = `string`,最大512`MB`
- 
+
    2.注意`setbit`时的偏移量，可能有较大耗时
 
    3.位图不是绝对好
 
+## `HyperLogLog`
 
+> 基于`HyperLogLog`算法：极小空间完成独立数量统计
+> 本质还是字符串
 
+    ```python
+    127.0.0.1:6379> type hyperloglog_key
+    string
+    ```
++  三个命令
+   1.`pfadd key element [element ...]`: 向`hyperloglog`添加元素
+   2.`pfcount key [key ...]`: 计算`hyperloglog`的独立总数
+   3.`pfmerge destkey sourcekey [sourcekey ...]`:合并多个`hyperloglog`
+    ```python
+    redis> pfadd 2017_03_06:unique:ids "uuid-1" "uuid-2" "uuid-3" "uuid-4"
+    (integer) 1
+    redis> pfcount 2017_03_06:unique:ids
+    (integer) 4
+    redis> pfadd 2017_03_06:unique:ids "uuid-1" "uuid-2" "uuid-3" "uuid-90"
+    (integer) 1
+    redis> pfcount 2017_03_06:unique:ids
+    (integer) 5
+    #合并多个
+    redis> pfadd 2016_03_06:unique:ids "uuid-1" "uuid-2" "uuid-3" "uuid-4"
+    (integer) 1
+    redis> pfcount 2016_03_06:unique:ids
+    (integer) 4
+    redis> pfadd 2016_03_05:unique:ids "uuid-4" "uuid-5" "uuid-6" "uuid-7"
+    (integer) 1
+    redis> pfcount 2016_03_05:unique:ids
+    (integer) 4
+    redis> pfmerge 2016_03_06:unique:ids 2016_03_05:unique:ids
+    ok
+    redis> pfcount 2016_03_06:unique:ids
+    (integer) 7
+    
+    ```
++  内存消耗（百万独立用户）
+    ```python
+    elements=""
+    key="2016_05_01:unique:ids"
+    for i in `seq 1 1000000`
+    do
+      elements = "${elements}" uuis-"${i}"
+      if[[$((i%1000)) == 0]]
+      then
+        redis-cli pfadd ${key} ${elements}
+        elements = ""
+      fi
+    done
+    ```
+|       | 内存消耗         |
+| ----- | ---------------- |
+| 1天   | 15`KB`           |
+| 1个月 | 450`KB`          |
+| 1年   | 15`KB`*365=`5MB` |
+
++  使用经验
+   1.是否能容忍错误？（错误率：0.81%）
+    ```python
+    127.0.0.1:6379> pfcunt 2016_05_01:inoque:ids(integer)
+    1009838
+    ```
+   2.是否需要单条数据？
+   
+
+## `GEO`
+
+> GEO(地理信息定位)：存储经纬度，计算两地距离，范围计算等
+
++  `API`
+   1.`geoadd`
+    ```python
+    geo key longitude latitude member
+    [longitude latitude member...]
+    #增加地理位置信息
+    ```
+    ```python
+    127.0.0.1:6379> geoadd cities:locations 116.28 39.55 beijin
+    (integer) 1
+    127.0.0.1:6379> geoadd cities:locations 116.28 39.55 tianjin 114.29 38.02 shijiazhuang 118.01 39.38 tanshan 115.29 38.51 baoding
+    (integer) 4
+    ```
+   2.`geopos`
+    ```python
+    geopos key member [member ...]
+    #获取地理位置信息
+    ```
+    ```python
+    127.0.0.1:6379> geopos cities:locations tianjin
+    1) 1)"117.12000042200088501"
+       2)"29.0800000535766543"
+    ```
+   3.`geodist`
+    ```python
+    geodist key member1 member2 [unit]
+    #获取两个地理位置的距离
+    #unit:m(米)、km(千米)、mi(英里)、ft(尺)
+    ```
+    ```python
+    127.0.0.1:6379> geolist cities:locations tianjin beijing km
+    "89.2061"
+    ```
+   4.`georadius`
++  相关说明
+   1.since 3.2+
+   2.type geoKey = zset
+   3.没有删除API:zrem key member
