@@ -52,6 +52,7 @@
 +  `AOF`重写实现两种方式  
    1.`bgrewriteaof`  
     ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_17-05-55.png) 
+   
    2.`AOF`重写配置  
    
     1.1 配置    
