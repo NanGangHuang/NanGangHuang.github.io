@@ -25,10 +25,11 @@
    1.`RDB`是`Redis`内存到硬盘的快照，用于持久化。
    2.`save`通常会阻塞`Redis`。
    3.`bgsave`不会阻塞`Redis`,但是会`fork`新进程
-   
 ## `AOF`
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-20-17.png)
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-21-38.png)
+
+   ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-20-17.png)
+    
+   ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_16-21-38.png)
 
 +  `AOF`三种策略
    1.`always`
