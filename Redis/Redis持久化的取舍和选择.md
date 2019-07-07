@@ -56,12 +56,14 @@
    2.`AOF`重写配置  
    
     1.1 配置    
+    
    |   配置名   |   含义   |
    | ---- | ---- |
    |   `auto-aof-rewrite-min-size`   |   `AOF`文件重写需要的尺寸   |
    |   `auto-aof-rewrite-percentage`   |   `AOF`文件增长率   |
    
-    1.2 统计    
+    1.2 统计  
+    
    |   统计名   |   含义   |
    | ---- | ---- |
    |   `aof_current_size`   |   `AOF`当前尺寸(单位：字节)   |
