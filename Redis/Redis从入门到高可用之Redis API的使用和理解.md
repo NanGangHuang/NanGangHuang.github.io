@@ -2,30 +2,30 @@
 
 *  通用命令
 
-   + keys
+   1.`keys`
    
-   ```python
-   keys * 
-   #遍历所有key
+    ```python
+    keys * 
+    #遍历所有key
+    
+    keys [pattern]
+    #便历所有key
+    ```
+    **keys命令一般不再生产环境使用**
+
+   2.`dbsize`
+
+    ```python
+    dbsize
+    #计算key的总数
+    ```
+
+   3.`exists key`
    
-   keys [pattern]
-   #便历所有key
-   ```
-   **keys命令一般不再生产环境使用**
-
-   + dbsize
-
-   ```python
-   dbsize
-   #计算key的总数
-   ```
-
-   + exists key
-   
-   ```python
-   exists key
-   #检查key是否存在
-   ```
+    ```python
+    exists key
+    #检查key是否存在
+    ```
 
    + del key [key ...]
    
