@@ -98,6 +98,10 @@ for(int i=0;i<100;i++){
 
   3.`M`操作与`pipeline`区别
 
+  
+
+  
+
   ## 发布订阅
 
   角色
@@ -185,12 +189,12 @@ for(int i=0;i<100;i++){
 + 位图
 
   1.`setbit`
-  
+
   ```python
   setbit key offset value
   #给位图指定索引设置值
   ```
-  
+
   ```python
   127.0.0.1:6379 > setbit unique:users:2016-04-05 0 1
   (integer) 0
@@ -198,75 +202,83 @@ for(int i=0;i<100;i++){
   (integer) 0
   127.0.0.1:6379 > setbit unique:users:2016-04-05 11 1
   ```
-  
+
   2.`getbit`
-  
+
   ```python
   getbit key offset
   #获取位图指定索引的值
   ```
-  
+
   ```python
   127.0.0.1:6379 > getbit unique:users:2016-04-05 8
   (integer) 0
   127.0.0.1:6379 > getbit unique:users:2016-04-05 19
   (integer) 1
   ```
-  
+
   3.`bitcount`
-  
+
+  ```python
+  bitcount key [start end]
+  #获取位图指定范围（start到end,单位为字节，如果不指定就是获取全部）位值为1的个数
   ```
-  
+
+  ```python
+  127.0.0.1:6379>bitcount unique:users:and:2016_04_05
+  (integer) 5
+  127.0.0.1:6379>bitcount unique:users:and:2016_04_05 1 3
+  (integer) 3
   ```
-  
+
   4.`bitop`
-  
+
   ```python
   bitop op destkey key [key...]
   #做多个Bitmap的and(交集)、or(并集)、not(非)、xor(异或)操作并将结果保存在destkey中
   ```
-  
+
   ```python
   #求两个位图的并集
   127.0.0.1:6379>bitop and unique:users:and:2016_04_04-2016_04_05 unique:users:2016-04-05 unique:users:2016-04-04
   (integer) 3
   127.0.0.1:6379>bitcount unique:users:and:2016_04_04-2016_04_05
   ```
-  
+
   5.`bitpos`
-  
+
   ```python
   bitpos key targetBit [start] [end]
   #计算位图指定范围（start到end,单位为字节，如果不指定就是获取全部）第一个偏移量对应的值等于targetBit的位置
   ```
-  
+
   ```python
   127.0.0.1:6379>bitops unique:users:and:2016_04_04 1
   (integer) 1
   127.0.0.1:6379>bitop unique:users:and:2016_04_04 0 1 2
   (integer) 8
   ```
+
   
-  
-  
+
   > 独立用户统计
-  
+
   ​	(1) 使用`set`和`Bitmap`
-  
+
   ​	(2) 1亿用户，5千万独立
-  
+
   | 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
   | -------- | -------------------- | ---------------- | ---------- |
   | `set`    | 32位                 | 50,000,000       | 200`MB`    |
   | `Bitmap` | 1位                  | 100,000,000      | 12.5`MB`   |
-  
+
   |          | 一天    | 一个月 | 一年   |
   | -------- | ------- | ------ | ------ |
   | set      | 200`M`  | 6`G`   | 72`G`  |
   | `Bitmap` | 12.5`M` | 375`M` | 4.5`G` |
-  
+
   ​		(3)只有10万独立用户
-  
+
   | 数据类型 | 每个`userid`占用空间 | 需要存储的用户量 | 全部内存量 |
   | -------- | -------------------- | ---------------- | ---------- |
   | `set`    | 32位                 | 1,000,000        | 4`MB`      |
