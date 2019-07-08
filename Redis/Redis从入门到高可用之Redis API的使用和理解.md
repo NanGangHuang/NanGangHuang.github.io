@@ -1,4 +1,4 @@
-## 通用命令
+## `通用命令
 
 *  通用命令
 
@@ -259,10 +259,10 @@
     #brpop阻塞版本，timeout是阻塞超时时间，timeout=0为永不阻塞
     ```
 
-    LRUSH + LPOP = Stack
-    LPUSH + RPOP = Queue
-    LPUSH + LTRIM = Capped Collection
-    LPUSH + BRPOP = Message Queue
+    `LRUSH + LPOP = Stack`  
+   `LPUSH + RPOP = Queue`  
+   ` LPUSH + LTRIM = Capped Collection`  
+   ` LPUSH + BRPOP = Message Queue`  
 
 ## 集合
 
@@ -295,8 +295,8 @@
     ```
 
    现有两个集合
-   `user:1:follow = it music his sports`
-   `user:2:follow = it news ent sports`
+   `user:1:follow = it music his sports`  
+   `user:2:follow = it news ent sports`     
    
     ```python
     sdiff user:1:follow user:2:follow = music his #差集
@@ -305,9 +305,9 @@
     sdiff|sinter|suion + store destkey ... #将差集、交集、并集结果保存在destkey中
     ```
 
-   SADD = Tagging
-   SPOP/SRANDMEMBER = Random item
-   SADD + SINTER = Social Graph
+   `SADD = Tagging`  
+   `SPOP/SRANDMEMBER = Random item`  
+   `SADD + SINTER = Social Graph`    
 
 ## 有序集合
 
