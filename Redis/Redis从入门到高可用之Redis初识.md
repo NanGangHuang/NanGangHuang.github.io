@@ -40,9 +40,13 @@
    
    `redis-server --port 6380` redis默认端口为6379
 
-*  配置启动Redis
+* 配置启动Redis
 
    `redis-server configPath`，如`redis-server redis.conf`
+
+   查看配置文件，去除所有的"#"以及"",并把它输出到某个文件中
+
+   `cat redis.conf | grep -v "#" | grep -v "^$" > redis-6382.conf`
 
 *  生产环境选着配置启动
 
@@ -52,11 +56,11 @@
 
 *  `redis-cli -h 127.0.0.1 -p 6384`
 
-## Redis常用配置
+## `Redis`常用配置
 
-   `daemonize`  --->  是否是守护进程（no|yes）    
-   `port`       --->  Redis对为端口号  
-   `logfile`    --->  Redis系统日志  
-   `dir`        --->  Redis工作目录  
+   `daemonize yes`  --->  是否是守护进程（`no|yes`）    
+   `port 6382`       --->  `Redis`对为端口号  
+   `logfile "6382.log"`    --->  `Redis`系统日志  
+   `dir "/opt/soft/redis/data"`         --->  `Redis`工作目录  
 
 
