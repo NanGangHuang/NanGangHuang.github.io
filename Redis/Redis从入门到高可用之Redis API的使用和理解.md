@@ -4,13 +4,16 @@
 
 ## `Redis`五种基本数据类型
 
-   1.字符串  
-   2.列表  
-   3.集合  
-   4.散列表  
-   5.有序集合  
+   1.字符串(String)  
+   2.列表(List)  
+   3.集合(Set)  
+   4.散列表(Hash)  
+   5.有序集合(ZSet)  
+
 
 ## 通用命令
+
+> 完整的`redis`命令列表：`http://redis.io/commands`
 
 *  通用命令
 
@@ -56,7 +59,7 @@
     #查看key剩余的过期时间
     ```
 
-    6.type key 
+   6.type key 
     ```python
     type key
     #返回key的类型
@@ -76,7 +79,10 @@
 
 *  单线程架构
 
-*  string
+##  string
+
+
+​    ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
 
     ```python
     get key
@@ -87,64 +93,70 @@
       
     del key
     #删除key-value
-   ```
-
+    
+    ```
+    
     ```python
     incr key
     #key自增1，如果key不存在，自增后get(key)=1
-
+    
     decr key
     #key自减1，如果key不存在，自减后get(key)=-1
-   
+       
     incrby key k 
     #key自增k,如果key不存在，自增后get(key)=k
-
+    
     decr key k
-    #key自减k,如果key不存在，自减后get(key)=-k
+    #key自减k,如果key不存在，自减后get(key)=-k  
+    
     ```
 
-   
+
     ```python
     set key value
     #不管key是否存在，都设置
-   
+       
     setnx key value
     #key不存在，才设置
-   
+       
     set key value xx
     #key存在，才设置
     ```
-
+    
     ```python
     mget key1 key2 key3 ...
     #批量获取key,原子操作
-
+    
     mset key1 value1 key2 value2 key3 value3
     #批量设置key-value   
     ```
-
+    
     ```python
     getset key newvalue
     #set key newvalue并返回旧的value
-   
+       
     append key value
     #将value追加到旧的value
-
+    
     strlrn key
     #返回字符串的长度（注意中文）
     ```
-
+    
     ```python
     incrbyfloat key 3.5
     #增加key对应的值3.5
-   
+       
     getrange key start end
     #获取字符串指定下标所有值
-
+    
     setrange key index value
     #设置指定下标所有对应的值
     ```
+
 > 字符串总结
+
+
+
 
     | 命令          | 含义                         | 复杂度 |
     | ------------- | ---------------------------- | ------ |
@@ -158,7 +170,7 @@
 ## hash
 
 *  哈希健值结构
-    ![]()
+    ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
 
    field不能相同，value可以相同
 
@@ -203,7 +215,7 @@
 ## 列表
 
 *  列表结构
-   ![]()
+   ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
    
 *  特点
 
