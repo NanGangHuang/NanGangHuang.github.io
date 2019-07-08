@@ -84,7 +84,7 @@
 
 ​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_14-26-40.png)
 
-    ```python
+   ```python
     get key
     #获取key对应的value
       
@@ -94,9 +94,9 @@
     del key
     #删除key-value
     
-    ```
-    
-    ```python
+   ```
+
+   ```python
     incr key
     #key自增1，如果key不存在，自增后get(key)=1
     
@@ -109,10 +109,10 @@
     decr key k
     #key自减k,如果key不存在，自减后get(key)=-k  
     
-    ```
+   ```
 
 
-    ```python
+   ```python
     set key value
     #不管key是否存在，都设置
        
@@ -121,17 +121,17 @@
        
     set key value xx
     #key存在，才设置
-    ```
-    
-    ```python
+   ```
+
+   ```python
     mget key1 key2 key3 ...
     #批量获取key,原子操作
     
     mset key1 value1 key2 value2 key3 value3
     #批量设置key-value   
-    ```
-    
-    ```python
+   ```
+
+   ```python
     getset key newvalue
     #set key newvalue并返回旧的value
        
@@ -140,9 +140,9 @@
     
     strlrn key
     #返回字符串的长度（注意中文）
-    ```
-    
-    ```python
+   ```
+
+   ```python
     incrbyfloat key 3.5
     #增加key对应的值3.5
        
@@ -151,21 +151,21 @@
     
     setrange key index value
     #设置指定下标所有对应的值
-    ```
+   ```
 
 > 字符串总结
 
 
 
 
-    | 命令          | 含义                         | 复杂度 |
-    | ------------- | ---------------------------- | ------ |
-    | set key value | 设置key-value                | o(1)   |
-    | get key       | 获取key-value                | o(1)   |
-    | del key       | 删除key-value                | o(1)   |
-    | setnx setxx   | 根据key是否存在设置key-value | o(1)   |
-    | Incx decr     | 计数                         | o(1)   |
-    | mget mset     | 批量操作key-value            | o(n)   |
+| 命令          | 含义                         | 复杂度 |
+| ------------- | ---------------------------- | ------ |
+| set key value | 设置key-value                | o(1)   |
+| get key       | 获取key-value                | o(1)   |
+| del key       | 删除key-value                | o(1)   |
+| setnx setxx   | 根据key是否存在设置key-value | o(1)   |
+| Incx decr     | 计数                         | o(1)   |
+| mget mset     | 批量操作key-value            | o(n)   |
 
 ## hash
 
@@ -339,3 +339,81 @@
 
 ​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_15-00-14.png)
 
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-24-56)
+
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-26-22)
+
+
++  “重要”`API`
+   1.`zadd`
+   
+    ```python
+    zadd key score element(可以是多对)
+    #添加score和element
+    ```
+   
+   2.`zrem`
+    ```python
+    zrem key element(可以是多个)
+    #删除元素
+    ```
+   
+   3.`zscore`
+    ```python
+    zscore key element
+    #返回元素的分数
+    ```
+   
+   4.`zincrby`
+    ```python
+    zincrby key increScore element
+    #增加或减少元素的分数
+    ```
+   
+   5.`zcard`
+    ```python
+    zcard key
+    #返回元素的总个数
+    ```
+   6.`zrange`
+    ```python
+    zrang key start end [WITHSCORES]
+    #返回指定索引范围内的升序元素【分值】
+    ```
+   
+   7.`zrangebyscore`
+    ```python
+    zrangebyscore key minScore maxScore
+    [WITHSCORES]
+    #返回指定分数范围内的升序元素【分值】
+    ```
+   
+   8.`zcount`
+    ```python
+    zcount key minScore maxScore
+    #返回有序集合内在指定分数范围内的个数
+    ```
+   
+   9.`zremrangebyrank`
+    ```python
+    zremrangbyrank key start end
+    #删除指定排名内的升序元素
+    ```
+   
+   10.`zremrangebyscore`
+    ```python
+    zremrangebyscore key minScore maxScore
+    #删除指定分数内的升序元素
+    ```
+   
++  有序集合总结
+   
+    
+   
+   | 操作类型 | 命令                                        |
+   | -------- | ------------------------------------------- |
+   | 基本操作 | zadd zrem zcad zincrby zscore               |
+   | 范围操作 | zrange zrangebyscore zcount zremrangebyrank |
+   | 集合操作 | zunionstore zinterstore                     |
+   
+   
