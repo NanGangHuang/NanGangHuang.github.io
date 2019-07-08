@@ -42,7 +42,7 @@
 
 *  配置启动Redis
 
-   `redis-server configPath`
+   `redis-server configPath`，如`redis-server redis.conf`
 
 *  生产环境选着配置启动
 
