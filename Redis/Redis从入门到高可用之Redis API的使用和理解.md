@@ -82,7 +82,7 @@
 ##  string
 
 
-​    ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_14-26-40.png)
 
     ```python
     get key
@@ -170,7 +170,7 @@
 ## hash
 
 *  哈希健值结构
-    ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
+    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_14-53-00.png)
 
    field不能相同，value可以相同
 
@@ -215,7 +215,9 @@
 ## 列表
 
 *  列表结构
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
+   ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_14-26-04.png)
+   
+   
    
 *  特点
 
@@ -292,7 +294,7 @@
 
 *  集合结构
 
-   ![]()
+   ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_14-46-12.png)
 
 *  特点
 
@@ -335,4 +337,5 @@
 
 ## 有序集合
 
-​      
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_15-00-14.png)
+
