@@ -1,6 +1,14 @@
 ## `Spring`框架中如何使用`Redis`
 
+查看`https://spring.io/projects/spring-data-redis#overview`
 
+## `Redis`五种基本数据类型
+
+   1.字符串  
+   2.列表  
+   3.集合  
+   4.散列表  
+   5.有序集合  
 
 ## 通用命令
 
