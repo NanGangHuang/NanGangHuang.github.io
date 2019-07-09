@@ -389,22 +389,27 @@
     ```
    
    8.`zcount`
+   
     ```python
     zcount key minScore maxScore
     #返回有序集合内在指定分数范围内的个数
     ```
    
    9.`zremrangebyrank`
+   
     ```python
     zremrangbyrank key start end
     #删除指定排名内的升序元素
     ```
    
    10.`zremrangebyscore`
+   
     ```python
     zremrangebyscore key minScore maxScore
     #删除指定分数内的升序元素
     ```
+   
+   > 注：这些索引可以是负数，它们表示从得分最高的元素开始的偏移。例如：`-1`分数最高的元素，`-2`分数第二高的元素等等。
    
 +  有序集合总结
    
