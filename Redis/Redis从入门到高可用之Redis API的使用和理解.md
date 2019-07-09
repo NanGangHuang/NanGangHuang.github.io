@@ -339,9 +339,9 @@
 
 ​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_15-00-14.png)
 
-​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-24-56)
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-24-56.png)
 
-​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-26-22)
+​    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-08_21-26-22.png)
 
 
 +  “重要”`API`
