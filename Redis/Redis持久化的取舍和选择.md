@@ -55,19 +55,58 @@
    
    2.`AOF`重写配置  
    
-    1.1 配置    
-    
+    2.1 配置    
+   
    |   配置名   |   含义   |
    | ---- | ---- |
    |   `auto-aof-rewrite-min-size`   |   `AOF`文件重写需要的尺寸   |
    |   `auto-aof-rewrite-percentage`   |   `AOF`文件增长率   |
    
-    1.2 统计  
-    
+    2.2 统计  
+   
    |   统计名   |   含义   |
    | ---- | ---- |
    |   `aof_current_size`   |   `AOF`当前尺寸(单位：字节)   |
    |   `aof_base_size`   |   `AOF`上次启动和重写的尺寸(单位：字节)   |
    
-   3.  
+   自动触发时机（同时满足）
+   (1)`aof_current_size>auto-aof-rewrite-min-size`
+   (2)`aof_current_size-aof_base_size/aof_base_size>auto-aof-rewrite=percentage`
+
+    2.3配置
+    ```python
+    appendonly yes
+    appendfilename "appendonly-${port}.aof"
+    appendfsync everysec
+    dir /bigdiskpath
+    no-appendfsync-on-rewrite yes
+    auto-aof-rewrite-percentage 100
+    autp-aof-rewrite-min-size 64mb
+    ```
+   
+## `RDB`和`AOF`
+
+|命令|`RDB`|`AOF`|
+|----|----|----|
+|启动优先级|低|高|
+|体积|小|大|
+|恢复速度|快|慢|
+|数据安全性|丢数据|根据策略决定|
+|轻重|重|轻|
+
++  `RDB`最佳策略
+   1."关"
+   2.集中管理
+   3.主从，从开？
+   
++  `AOF`最佳策略
+   1."开"：缓存和存储
+   2.`AOF`重写集中管理
+   3.`everysec`
+   
++  最佳策略
+   1.小分片
+   2.缓存或者存储
+   3.监控(硬盘、内存、负载、网络)
+   4.足够的内存
 
