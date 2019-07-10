@@ -98,16 +98,16 @@
 
    ```python
     incr key
-    #key自增1，如果key不存在，自增后get(key)=1
+    #key的值自增1，如果key不存在，自增后get(key)=1
     
     decr key
-    #key自减1，如果key不存在，自减后get(key)=-1
+    #key的值自减1，如果key不存在，自减后get(key)=-1
        
     incrby key k 
-    #key自增k,如果key不存在，自增后get(key)=k
+    #key的值自增k,如果key不存在，自增后get(key)=k
     
-    decr key k
-    #key自减k,如果key不存在，自减后get(key)=-k  
+    decrby key k
+    #key的值自减k,如果key不存在，自减后get(key)=-k  
     
    ```
 
@@ -153,6 +153,42 @@
     #设置指定下标所有对应的值
    ```
 
+   ```python
+   setex key seconds value
+   #将值 value 关联到 key ，并将 key 的生存时间设为 seconds (以秒为单位)。
+   #如果 key 已经存在， SETEX 命令将覆写旧值。
+   #类似于
+   SET key value
+   EXPIRE key seconds  # 设置生存时间
+   ```
+
+   列如：
+   ```python
+   # 在 key 不存在时进行 SETEX
+   redis> SETEX cache_user_id 60 10086
+   OK
+
+   redis> GET cache_user_id  # 值
+   "10086"
+
+   redis> TTL cache_user_id  # 剩余生存时间
+   (integer) 49
+
+   # key 已经存在时，SETEX 覆盖旧值
+
+   redis> SET cd "timeless"
+   OK
+
+   redis> SETEX cd 3000 "goodbye my love"
+   OK
+
+   redis> GET cd
+   "goodbye my love"
+
+   redis> TTL cd
+   (integer) 2997
+   
+   ```
 > 字符串总结
 
 
@@ -210,6 +246,12 @@
 
     hkeys key
     #返回hash key对应所有field
+    
+    hincrby key-name key increment
+    #将键key存储的值加上整数increment
+    
+    hincrbyfloat key-name key increment
+    #将键key存储的值加上浮点数increment
     ```
 
 ## 列表
@@ -255,12 +297,12 @@
    
 
     ltrim key start end
-    #按照索引范围修剪列表（删除）
+    #按照索引范围修剪列表（删除）,保留start end范围内的元素，包括start end
     ```
 
    3.查
     ```python
-    lrange key start end(包含end)
+    lrange key start end(包含start end)
     #获取列表指定索引范围所有item  
    
     lindex key index
@@ -283,6 +325,12 @@
 
     brpop key timeout
     #brpop阻塞版本，timeout是阻塞超时时间，timeout=0为永不阻塞
+    
+    rpoplpush source-key dest-key 
+    #从source-key列表中弹出位于最右端的元素，然后将这个元素推入dest-key列表的最左端，并向用户返回这个元素
+    
+    brpoplpush source-key dest-key timeout 
+    #从source-key列表中弹出位于最右端的元素，然后将这个元素推入推入dest-key列表的最左端，并向用户返回这个元素，timeout是阻塞超时时间，timeout=0为永不阻塞
     ```
 
     `LRUSH + LPOP = Stack`  
@@ -318,6 +366,8 @@
     srandmember user:1:follow count = his #从集合中随机挑count个元素
     spop user:1:follow = sports #从集合中随机弹出一个元素
     smembers user:1:follow = music his sports it #获取集合所有元素
+    smove source-key dest-key item 
+    #如果集合source-key包含元素item,那么从集合source-key里面移除元素item添加到集合dest-key中：如果item被成功移除，那么命令返回1,否则返回0
     ```
 
    现有两个集合
@@ -326,7 +376,12 @@
    
     ```python
     sdiff user:1:follow user:2:follow = music his #差集
+    sdiffstore dest-key key-name 
+    #将存在于第一个集合但不存在于其它几何的元素存储到dest-key键里面
+    
     sinter user:1:follow user:2:follow = it sports #交集
+    sinterstore dest-key key-name 
+    #将那些同时存在于所有集合的元素存储到dest-key键里面
     sunion user:1:follow user:2:follow = it music his sports news ent #并集
     sdiff|sinter|suion + store destkey ... #将差集、交集、并集结果保存在destkey中
     ```
@@ -408,6 +463,41 @@
     zremrangebyscore key minScore maxScore
     #删除指定分数内的升序元素
     ```
+   
+   11.`zrank`
+    ```python
+    ZRANK key member
+
+    #返回有序集 key 中成员 member 的排名。其中有序集成员按 score 值递增(从小到大)顺序排列。
+ #排名以 0 为底，也就是说， score 值最的成员排名为 0 。
+    ```
+    列如：
+    ```python
+    redis> ZRANGE salary 0 -1 WITHSCORES        
+    # 显示所有成员及其 score 值
+    1) "peter"
+    2) "3500"
+    3) "tom"
+    4) "4000"
+    5) "jack"
+    6) "5000"
+
+    redis> ZRANK salary tom                     
+    # 显示 tom 的薪水排名，第二
+    (integer) 1
+    ```
+   12.zrevrank
+    ```python
+    zrevrank key-name member 
+    #返回有序集合里成员member的排名，成员按照分值从小到大排列
+    ```
+    
+   13.zrevrange 
+    ```python
+    zrevrange key-name start stop 
+    #返回有序集合给定排名范围内的成员，成员按照分值从大到小排列
+    ```
+   
    
    > 注：这些索引可以是负数，它们表示从得分最高的元素开始的偏移。例如：`-1`分数最高的元素，`-2`分数第二高的元素等等。
    
