@@ -24,3 +24,21 @@
 
 ​       (4)`@component`（把普通`pojo`实例化到spring容器中，相当于配置文件中的<bean id="" class=""/>
 
+
+
+
+
+> [慕课网_《2小时学会SpringBoot》学习总结](https://segmentfault.com/a/1190000008398892)
+
+```java
+@Controller：处理http请求
+@RestController:Spring4之后新的注解，返回json需要@ResponseBody与@Controller
+@RequestMapping:配置url映射
+```
+处理请求中的参数
+```java
+@PathVariable:获取url中的数据
+@RequestParam:获取请求参数的值
+@GetMapping:组合注解
+```
+

@@ -8,4 +8,5 @@
 
 + `master` 宕掉故障处理
 
-  ![](Snipaste_2019-07-18_22-38-34.png)
+  ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-18_22-38-34.png)
+
