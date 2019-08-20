@@ -25,5 +25,47 @@
 2.构建于TCP协议之上  
 3.屏蔽网络传输相关细节  
 
+## URI,URL,URN
+
+###### URI(Uniform Resource Identifier)统一资源标识符
+
+###### URL(Uniform Resource Locator)统一资源定位器
+
+`http://user:pass@host.com:80/path?query=strin#hash`
+
+###### URN 永久统一资源定位符
+
+###### 三者的区别
+
+## HTTP请求报文格式
+
+![](https://nanganghuang.github.io/Http/img/Snipaste_2019-08-17_14-58-25.png)
+
+###### GET
+
+###### POST
+
+###### PUT
+
+###### DELETE
+
+###### HTTP CODE
+
+## TCP与UDP的区别
+
+###### TCP
+
+###### UDP
+1.UDP报文结结构  
+![](https://nanganghuang.github.io/Http/img/Snipaste_2019-08-17_15-34-53.png)
+
+###### TCP与UDP区别
+1.面向连接和无连接
+2.可靠性（强 弱）
+3.有序性（有 无）
+4.速度（快 慢）
+5.量级（重 轻）
+
+###### TCP
 
 
