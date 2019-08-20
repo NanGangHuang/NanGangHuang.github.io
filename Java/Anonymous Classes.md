@@ -59,3 +59,32 @@ public class HelloWorldAnonymousClasses{
 
 > [java8官方文档—Lambda表达式](https://www.jianshu.com/p/f76f0a0dc5c1)
 
+###### 使用带有标准函数式接口的Lambda表达式
+
+`java.util.function`包中有许多标准函数式接口
+```java
+//标准函数式接口
+interface Predicate<T> {
+    boolean test(T t);
+}
+```
+
+```java
+public static void printPersonsWithPredicate(
+    List<Person> roster, Predicate<Person> tester) {
+    for (Person p : roster) {
+        if (tester.test(p)) {
+            p.printPerson();
+        }
+    }
+}
+```
+
+```java
+printPersonsWithPredicate(
+    roster,
+    p -> p.getGender() == Person.Sex.MALE
+        && p.getAge() >= 18
+        && p.getAge() <= 25
+);
+```
