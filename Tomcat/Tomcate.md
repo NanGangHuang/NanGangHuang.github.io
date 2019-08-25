@@ -67,3 +67,9 @@ redirectPort="8443" />
 
 ###### `APR`安装
 
+
+
+###### `Memcached`入门
+1.1`Memcached`是一款高性能、分布式的内存对象缓存系统
+1.2`Memcached`可以有效分担数据库负载
+1.3`Memcached`基于libevent事件实现无阻塞通信
