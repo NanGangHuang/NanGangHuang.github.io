@@ -104,5 +104,11 @@ cd 到安装目录
 | delete    | 删除数据                       |
 | Incr/decr | 增加/减少数值                  |
 
+注：1.`Memcached`是`key/value`键值对形式存储
+   2.`key`的样子：`key flags exTime length`
 
+`replace key flags exTime length -> value`
+`append key flags exTime length -> value` length表示追加的长度
+`prepend key flags exTime length -> value` length表示追加的长度
 
+【3-7】start
