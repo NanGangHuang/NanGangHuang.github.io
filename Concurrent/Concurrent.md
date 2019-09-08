@@ -93,3 +93,23 @@
 3.将对象的引用保存到某个正确构造对象的final类型域中  
 4.将对象的引用保存到一个由锁保护的域中。 
 
+#### 不可变对象
+
+1.不可变对象需要满足的条件
+	1.1 对象创建以后其状态就不能修改  
+	1.2 对象所有域都是final类型的  
+	1.3 对象是正确创建的(在对象创建期间，this引用没有逾出)  
+	
+ThreadLocal类的学习
+
+#### 线程不安全类与写法
+
+1.StringBuilder -> StringBuffer
+2.SimpleDateFormat -> JodaTime
+3.ArrayList,HashSet,HashMap等Collections
+
+
+
+
+
+
