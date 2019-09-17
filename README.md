@@ -43,4 +43,4 @@ root          2      0  0 09:12 ?        00:00:00 [kthreadd]
 要手动在虚拟目录中挂载设备，需要以root用户身份登录  
 > mount -t type device directory
 
-type 参数指定了磁盘被格式化的文件系统类型  
+type 参数指定了磁盘被格式化的文件系统类型                                                                                                                                                     
