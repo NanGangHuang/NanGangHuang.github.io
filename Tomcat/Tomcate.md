@@ -7,13 +7,13 @@
 
 
 ###### 线程池优化
-1.`maxConnections`最大连接数
-最大连接数受系统内核的影响
+1.`maxConnections`最大连接数  
+最大连接数受系统内核的影响  
 	1.1 `ulimit -a` : 查看系统支持的最大连接数    
 	     open files 1024 当前系统支持最大的连接数   
     1.2 修改 `vim /etc/security/limits.conf`
         添加 `*      soft     nofiles        65535`  
-            `*      hard     nofiles         65535`  
+            `*      hard     nofiles         65535`      
 
 2.`maxThreads`最大线程数
 
