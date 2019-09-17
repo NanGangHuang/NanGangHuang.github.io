@@ -104,9 +104,9 @@ ThreadLocal类的学习
 
 #### 线程不安全类与写法
 
-1.StringBuilder -> StringBuffer
-2.SimpleDateFormat -> JodaTime
-3.ArrayList,HashSet,HashMap等Collections
+1.StringBuilder -> StringBuffer  
+2.SimpleDateFormat -> JodaTime  
+3.ArrayList,HashSet,HashMap等Collections  
 
 
 
