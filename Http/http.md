@@ -43,9 +43,13 @@
 
 ![](https://nanganghuang.github.io/Http/img/1.png)
 
+![](https://nanganghuang.github.io/Http/img/4.png)
+
 #### 响应报文格式
 
 ![](https://nanganghuang.github.io/Http/img/2.png)
+
+![](https://nanganghuang.github.io/Http/img/3.png)
 
 #### GET
 
@@ -56,6 +60,18 @@
 #### DELETE
 
 #### HTTP CODE
+
+## 状态码
+
+|      | 类别                           | 原因状语                   |
+| ---- | ------------------------------ | -------------------------- |
+| 1XX  | Informational(信息性状态码)    | 接收的请求正在请求         |
+| 2XX  | Success(成功状态码)            | 请求正常处理完毕           |
+| 3XX  | Redirection(重定向状态码)      | 需要进行附加操作以完成请求 |
+| 4XX  | Client Error(客户端错误状态码) | 服务端无法处理请求         |
+| 5XX  | Server Error(服务端错误状态码) | 服务器处理请求出错         |
+
+
 
 ## TCP与UDP的区别
 
@@ -82,3 +98,7 @@
 #### 加密
 公钥：在客户端加密
 私钥：在服务端解密
+
+
+
+【图解HTTP】3-5
