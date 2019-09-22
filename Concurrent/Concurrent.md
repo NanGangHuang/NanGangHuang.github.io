@@ -96,9 +96,9 @@
 #### 不可变对象
 
 1.不可变对象需要满足的条件
-	1.1 对象创建以后其状态就不能修改  
-	1.2 对象所有域都是final类型的  
-	1.3 对象是正确创建的(在对象创建期间，this引用没有逾出)  
+	1.1 对象创建以后其状态就不能修改    
+	1.2 对象所有域都是final类型的    
+	1.3 对象是正确创建的(在对象创建期间，this引用没有逾出)   
 	
 ThreadLocal类的学习
 
@@ -111,8 +111,18 @@ ThreadLocal类的学习
 
 
 #### 现场安全 - 同步容器
-1. 
 
+
+#### AQS 同步主键 (AbstractQueuedSynchronizer)
+
++ CountDownLatch
++ Semaphore
++ CyclicBarrier
++ ReentrantLock
++ Condition
++ FutureTask
+
+【7-4】
 
 
 

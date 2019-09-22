@@ -13,8 +13,10 @@
 #### TCP/IP四层协议
 
 
+
 #### ISO七层协议模型
 
+![](https://nanganghuang.github.io/Http/img/5.png)
 
 #### 传输层
 1.向用户提供可靠的端到端的服务  

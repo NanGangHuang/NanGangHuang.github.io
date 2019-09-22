@@ -85,8 +85,19 @@ var shallowCopy = fruits.slice(); // this is how to make a copy
 // ["Strawberry", "Mango"]
 ```
 
+#### 非严格相等
 
+|      |           |            |       |                    |                           | 被比较值B                   |                             |
+| ---- | --------- | ---------- | ----- | ------------------ | ------------------------- | --------------------------- | --------------------------- |
+|      |           | Undefinded | Null  | Number             | String                    | Boolean                     | Object                      |
+| 被   | Undefined | true       | true  | false              | false                     | false                       | IsFalsy(B)                  |
+| 比   | Null      | true       | true  | flase              | false                     | false                       | IsFalsy(B)                  |
+| 教   | Number    | false      | false | A===B              | A===ToNumber(B)           | A===ToNumber(B)             | A===ToPrimitive(B)          |
+| 值   | String    | false      | false | ToNumber(A) ===B   | A===B                     | ToNumber(B)===ToNumber(A)   | ToPrimitive(B)==A           |
+| A    | Boolean   | false      | false | ToNumber(A) ===B   | ToNumber(B)===ToNumber(A) | A===B                       | ToNumber(A)==ToPrimitive(B) |
+|      | Object    | false      | false | ToPrimitive(A) ==B | ToPrimitive(A) ==B        | ToPrimitive(A)==ToNumber(B) | A === B                     |
 
+注：``ToNumber(A) `尝试在比较前将参数 A 转换为数字.`ToPrimitive(A)`通过尝试调用A 的`A.toString()` 和 `A.valueOf()` 方法，将参数 A 转换为原始值（Primitive）
 
 
 
