@@ -61,4 +61,12 @@ join user1_equipment b on a.id = b.user_id
 cross join tb_sequence c where c.id <= 3 order by 
 user_name 
 ```
+#### 如何处理重复数据
+
+1.利用`Group by` 和 `Having`来处理
+
+#### 如何在子查询中匹配两个值？
+
+
+
 
