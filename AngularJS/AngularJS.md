@@ -1,5 +1,5 @@
 ## AngularJS常见指令
-
+w
 **ng-app**  指令定义一个 AngularJS 应用程序
 
 **ng-model**  指令把元素值（比如输入域的值）绑定到应用程序。
