@@ -88,7 +88,6 @@
         tcp_nopush on;
         root /opt/app/code;
      }
-
    ```
 
 ## 浏览器缓存
@@ -122,7 +121,7 @@
    location ~ .*\.(htm|html)$ {
         expires 24h; # 缓存24小时之后过期
         root /opt/app/code;
-     }
+     } 
    ```
    
 
@@ -147,7 +146,7 @@
      }
    ```
 
-   ```html
+   ```
    <!-- 该页面会产生跨域访问，通过ajax访问http://jeson.imoocc.com/1.htm -->
    <html>
        <meta charset="utf-8">
@@ -168,8 +167,7 @@
           });
        });
       <body style="background-color:red;">
-        <h1>测试跨域访问</h1>
-      </body>
+        <h1>测试跨域访问</h1>      </body>
    </html>
    ```
 

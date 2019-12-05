@@ -113,6 +113,9 @@
    客户端  <==============> 服务端  
    request - 包括请求行、请求头、请求数据  
    response - 包括状态行、消息报头、响应正文  
+   
+   curl : 模拟请求
+   `curl -v www.baidu.com`
 
 ## Nginx日志类型
 
@@ -204,7 +207,7 @@
      > Default: ---  
      > Context:http  
      
-     > Syntax: limit_conn zone number;  
+     > Syntax: limit_conn zone number;  (number:表示并发限制)
      > Default: ---  
      > Context:http,server,location  
 
@@ -272,8 +275,10 @@
           deny all;
           index  admin.html;
        }
-    
        ```
+       http_x_forwarder_for
+       ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-11-26_15-15-43.png)
+       
    + http_auth_basic_module
      
      > Syntax: auth_basic string | off;  
