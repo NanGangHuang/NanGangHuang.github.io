@@ -10,7 +10,7 @@
 `TTY` ：进程启动时的终端设备。  
 `TIME` ：运行进程需要的累计CPU时间。  
 `CMD` ：启动的程序名称。  
-ps命令显示某个特定时间点的信息。  
+ps命令显示某个特定时间点的信息。   
 
 ```
 UID         PID   PPID  C STIME TTY          TIME CMD
