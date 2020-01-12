@@ -211,6 +211,16 @@ Session简介
 
 ![](https://nanganghuang.github.io/Http/img/HTTP.png)
 
++ HTTPS需要到CA申请证书，HTTP不需要
++ HTTPS密文传输，HTTP明文传输
++ 连接方式不同，HTTPS默认使用443端口，HTTP使用80端口
++ HTTPS=HTTP+加密+认证+完整性保护，较HTTP安全
+
+## Socket简介
+
++ Socket是对TCP/IP协议的抽象，是操作系统对外开放的接口
+
+
 ## HTTPS
 #### 加密
 公钥：在客户端加密
