@@ -5,10 +5,34 @@
 并发：多个线程操作相同的资源，保证线程安全，合理使用资源。  
 高并发:服务器能同时处理很多请求，提高程序性能。    
 
+## CPU多级缓存
+
+![](https://nanganghuang.github.io/Concurrent/img/4.jpg)
+
+为什么需要CPU cache : CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源。  
+所以cache的出现，是为了缓解CPU和内存之间速度的不匹配问题（结构：CPU->cache->memory）
 
 #### `CPU`多级缓存-缓存一致性（`MESI`）
 
-#### `Java`内存模型（`Java Memory Model,JMM`）  
++ 用于保证多个CPU cache之间缓存共享数据的一致
+
+## `Java`内存模型（`Java Memory Model,JMM`）  
+
+![](https://nanganghuang.github.io/Concurrent/img/5.jpg)
+
+![](https://nanganghuang.github.io/Concurrent/img/6.jpg)
+
+![](https://nanganghuang.github.io/Concurrent/img/7.jpg)
+
+![](https://nanganghuang.github.io/Concurrent/img/8.jpg)
+
+#### Java内存模型 - 同步操作与规则
+
+![](https://nanganghuang.github.io/Concurrent/img/9.jpg)
+
+#### 并发的优势与风险
+
+![](https://nanganghuang.github.io/Concurrent/img/10.jpg)
 
 #### 并发模拟  
 
@@ -17,8 +41,6 @@
 **原子性：**提供了互斥访问，同一时刻只能有一个线程来对它进行操作。  
 **可见性：**一个线程对主内存的修改可以及时的被其他线程观察到  
 **有序性：**一个线程观察其他线程中指令执行顺序，由于指令重排序的存在，该观察结果一般杂乱无序。  
-
-
 
 
 #### 原子性-`Atomic`包
