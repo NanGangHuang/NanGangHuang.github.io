@@ -34,7 +34,10 @@
 
 ![](https://nanganghuang.github.io/Concurrent/img/10.jpg)
 
-#### 并发模拟  
+#### 并发模拟 
+
++ CountDownLatch
++ Semaphore
 
 #### 线程安全性  
 
@@ -104,7 +107,7 @@
 2.可见性：`synchronized、volatile`  
 3.有序性：`happens-before` 
 
-#### 发布对象
+## 发布对象
 
 1.发布对象：使一个对象能够被当前范围之外的代码所使用
 2.对象谕(yu)出：一种错误的发布。当一个对象还没有构造完成时，就使它被其他线程所见
@@ -123,7 +126,18 @@
 	1.2 对象所有域都是final类型的    
 	1.3 对象是正确创建的(在对象创建期间，this引用没有逾出)   
 	
-ThreadLocal类的学习
++ final关键字：类、方法、变量  
+    1.1 修饰类：不能被继承  
+    1.2 修饰方法：1.锁定方法不被继承类修改；2、效率  
+    1.3 修饰变量：基本数据类型变量、引用类型变量       
+
+## 线程封闭
+
++ Ad-hoc 线程封闭：程序控制实现，最糟糕，忽略
++ 堆栈封闭：局部变量，无并发问题
++ ThreadLocal线程封闭：特别好的封闭方法
+
+
 
 #### 线程不安全类与写法
 
@@ -131,12 +145,21 @@ ThreadLocal类的学习
 2.SimpleDateFormat -> JodaTime  
 3.ArrayList,HashSet,HashMap等Collections  
 
-
-
 #### 现场安全 - 同步容器
 
++ ArrayList -> Vector,Stack
++ HashMap -> HashTable(key,value不能为null)
++ Collections.synchronizedXXX(List,Set,Map)
+
+#### 线程安全 - 并发容器 J.U.C
+
++ ArrayList -> CopyOnWriteArrayList
++ HashSet,TreeSet -> CopyOnWriteArraySet,ConcurrentSkipListSet
++ HashMap,TreeMap -> ConcurrentHashMap,ConcurrentSkipListMap
 
 #### AQS 同步主键 (AbstractQueuedSynchronizer)
+
+![](https://nanganghuang.github.io/Concurrent/img/11.jpg)
 
 + CountDownLatch
 + Semaphore
