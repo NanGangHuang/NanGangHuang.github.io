@@ -241,6 +241,80 @@
 + 不剥夺条件
 + 环路等待条件
 
+#### 多线程并发最佳实践
+
++ 使用本地变量
++ 使用不可变类
++ 最小化锁的作用域范围：S=1/(1-a+a/n)
++ 使用线程池的Executor,而不是直接new Thread执行
++ 宁可使用同步也不要使用线程的wait和notify
++ 使用BlockingQueue实现生产-消费模式
++ 使用并发集合而不是加了锁的同步集合
++ 使用Semaphore创建有界的访问 
++ 宁可使用同步代码块，也不使用同步的方法
++ 避免使用静态变量
+
+#### Spring与线程安全
+
++ Spring bean : singleton,prototype
++ 无状态对象
+
+#### 多线程并发与线程安全总结
+
+![](https://nanganghuang.github.io/Concurrent/img/Snipaste_2020-02-09_16-45-44.png)
+
+## 高并发处理与手段
+
+#### 扩容
+
++ 垂直扩容（纵向扩展）：提高系统部件能力
++ 水平扩容（横向扩展）：增加更多系统成员来实现
+
+## 缓存
+
+#### 缓存特征
+
++ 命中率: 命中数/(命中数+没有命中数)
++ 最大元素（空间）
++ 清空策略：FIFO,LFU，LRU,过期时间，随机等
+
+#### 缓存命中率影响因素
+
++ 业务场景和业务需求
++ 缓存的设计（粒度和策略）
++ 缓存容量和基础设施 
+
+#### 缓存分类和应用场景
+ 
++ 本地缓存：编程实现（成员变量，局部变量，静态变量）、Guava Cache
++ 分布式缓存：Memcache,Redis
+
+#### 高并发场景下缓存常见问题
+
++ 缓存一致性
+
+![](https://nanganghuang.github.io/Concurrent/img/24.jpg)
+
++ 缓存并发问题
+
+![](https://nanganghuang.github.io/Concurrent/img/25.jpg)
+
++ 缓存穿透问题
+
+![](https://nanganghuang.github.io/Concurrent/img/26.jpg)
+
++ 缓存的雪崩现象
+
+![](https://nanganghuang.github.io/Concurrent/img/27.jpg)
+
+
+
+
+
+
+
+
+
 
 
 
