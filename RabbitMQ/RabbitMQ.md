@@ -88,6 +88,49 @@ Exchange和Queue,同一个Virtual Host里面不能有相同名称的Exchange或Q
 
 + 访问地址：[http://192.168.11.76:15672/](http://192.168.11.76:15672/)
 
+## 命令行与管控台-基础操作
+
++ rabbitmqctl stop_app:关闭应用
+
++ rabbitmqctl start_app:启动应用
+
++ rabbitmqctl status:节点状态
+
++ rabbitmqctl add_user username password:添加用户
+
++ rabbitmqctl list_users:列出所有用户
+
++ rabbitmqctl delete_user username :删除用户
+
++ rabbitmqctl clear_permissions -p vhostpath username :清除用户权限
+
++ rabbitmqctl list_user_permissions username : 列出用户权限
+
++ rabbitmqctl change_password username newpassword : 修改密码
+
++ rabbitmqctl set_permissions -p vhostpath username ".*" ".*" ".*" : 设置用户权限
+
++ rabbitmqctl add_vhost vhostpath :创建虚拟主机
+
++ rabbitmqctl list_vhosts : 列出所有虚拟主机
+
++ rabbitmqctl list_permissions -p vhostpath : 列出虚拟主机上所有权限 
+
++ rabbitmqctl delete_vhost vhostpath : 删除虚拟主机  
+
++ rabbitmqctl list_queues: 查看所有队列信息
+
++ rabbitmqctl -p vhostpath purge_queue blue :清除队列里的消息
+
++ rabbitmqctl reset: 移除所有数据，要在rabbitmqctl stop_app 之后使用
+
++ rabbitmqctl join_cluster <clusternode> [ --ram ] : 组成集群命令
+
++ rabbitmqctl cluster_status : 查看集群状态 
+
++ rabbitmqctl change_cluster_node_type disc | ram : 修改集群节点的存储形式
+
++ rabbitmqctl forget_cluster_node [--offline] 忘记节点（摘除节点）
 
 
 
