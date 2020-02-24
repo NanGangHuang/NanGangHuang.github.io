@@ -1,3 +1,5 @@
+> 学至慕课网《RabbitMQ消息中间件技术精讲》
+
 ## 主流消息中间件介绍
 
 ###### ActiveMQ
@@ -132,5 +134,69 @@ Exchange和Queue,同一个Virtual Host里面不能有相同名称的Exchange或Q
 
 + rabbitmqctl forget_cluster_node [--offline] 忘记节点（摘除节点）
 
++ rabbitmqctl rename_cluster_node oldnode1 newnode1 [oldnode2] [newnode2...] (修改节点名称)
 
+#### 查看RabbitMQ是否启动
 
+```
+[root@iZbp1fdluqx20hcz9r7aejZ ~]# lsof -i:5672
+COMMAND   PID     USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
+```
+
+## 急速入门-消息生产与消费
+
++ ConnectionFactory:获取连接工厂
+
++ Connection:一个连接
+
++ Channel:数据通信信道，可发送和接受消息
+
++ Queue:具体的消息存储队列
+
++ Producer & Consumer 生产和消费者
+
+## Exchange 交换机
+
++ Exchange:接受消息，并根据路由键转发消息所绑定的队列
+
+![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_15-37-20.png)
+
+#### 交换机属性
+
++ Name:交换机名称
+
++ Type:交换机类型direct,topic,fanout,headers
+
++ Durability:是否需要持久化，true为持久化
+
++ Auto Delete:当最后一个绑定到Exchange上的队列删除后，自动删除该Exchange
+
++ Internal:当前Exchange是否用于RabbitMQ内部使用，默认为False 
+
++ Arguments:扩展参数，用于扩展AMQP协议自制定化使用
+
+#### Direct Exchange
+
++ 所有发送到Direct Exchange的消息被转发到RouteKey中指定的Queue
+
+注意：Direct模式可以使用RabbitMQ自带的Exchange:default Exchange,所以不需要将Exchange
+进行任何绑定(binding)操作，消息传递时，RouteKey必须完全匹配才会被队列接受，否则该消息会被
+抛弃。
+
+![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_15-49-01.png)
+
+#### Topic Exchange
+
++ 所有发送到Topic Exchange的消息被转发到所有关心Routekey中指定Topic的Queue上
+
++ Exchange 将RouteKey和某Topic进行模糊匹配，此时队列需要绑定一个Topic
+
++ 注意：可以使用通配符进行模糊匹配
+
+```
+符号 "#" 匹配一个或多个词
+符号 "*" 匹配不多不少一个词
+例如： "log.#" 能够匹配到"log.info.oa"
+       "log.*" 只会匹配到"log.erro"
+```
