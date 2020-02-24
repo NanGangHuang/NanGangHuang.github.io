@@ -203,3 +203,13 @@ beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
 
 ![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_16-12-02.png)
 
+#### Fanout Exchange
+
++ 不处理路由键，只需要简单的将队列绑定到交换机上
+
++ 发送到交换机的消息都会被转发到与该交换机绑定的所有队列上
+
++ Fanout交换机转发消息是最快的
+
+![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_16-27-25.png)
+
