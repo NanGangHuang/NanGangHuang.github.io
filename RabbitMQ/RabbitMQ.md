@@ -194,9 +194,12 @@ beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
 
 + 注意：可以使用通配符进行模糊匹配
 
-```
+``` 
 符号 "#" 匹配一个或多个词
 符号 "*" 匹配不多不少一个词
 例如： "log.#" 能够匹配到"log.info.oa"
        "log.*" 只会匹配到"log.erro"
 ```
+
+![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_16-12-02.png)
+
