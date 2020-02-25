@@ -213,3 +213,40 @@ beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
 
 ![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_16-27-25.png)
 
+## Binding-绑定
+
+ + Exchange和Exchange、Queue之间的连接关系
+ 
+ + Binding中可以包含RoutingKey或者参数
+ 
+ ## Queue-消息队列
+ 
+ + 消息队列，实际存储消息数据
+ 
+ + Durability:是否持久化，Durable:是，Transient:否
+ 
+ + Auto delete:如选yes，代表当最后一个监听被移除之后，该Queue会自动被删除
+ 
+ ## Message-消息
+ 
+ + 服务器和应用程序之间传送的数据
+ 
+ + 本质上就是一段数据，由Properties和Payload(Body)组成
+ 
+ + 常用属性：delivery mode,headers(自定义属性)
+ 
+ #### Message-其他属性
+ 
+ + content_type、content_encoding、priority
+ 
+ + correlation_id、reply_to、expiration、message_id
+ 
+ + timestamp、type、user_id、app_id、cluster_id
+ 
+ ## Virtual host-虚拟主机
+ 
+ + 虚拟地址，用于进行逻辑隔离，最上层的消息路由
+ 
+ + 一个Virtual Host里面可以有诺干个Exchange和Queue
+ 
+ + 同一个Virtual Host里面不能有相同名称的Exchange或Queue
