@@ -2,7 +2,7 @@
 
 * 生命周期
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-05-11_15-09-26.png)
+   ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-05-11_15-09-26.png)
 
    
 

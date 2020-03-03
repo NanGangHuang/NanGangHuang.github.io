@@ -46,7 +46,7 @@
 
 *  用什么方法传递用户的真实IP
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-03_10-35-38.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-03_10-35-38.png)
 
 *  Nginx常见错误码
    

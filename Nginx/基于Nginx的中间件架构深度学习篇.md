@@ -85,8 +85,8 @@
    Context:http,server,location
    ```
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-03-29_18-00-01.png)
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-03-29_18-02-01.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-03-29_18-00-01.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-03-29_18-02-01.png)
 
    ```py
    root   /opt/app/code;
@@ -138,19 +138,19 @@
 
    + 对称加密
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-01_16-00-32.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-01_16-00-32.png)
 
    + 非对称加密
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-01_16-03-59.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-01_16-03-59.png)
 
    + HTTPS加密原理
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-01_16-04-53.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-01_16-04-53.png)
 
    + 中间人伪造客户端和服务端
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-01_16-10-15.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-01_16-10-15.png)
 
 *  生成秘钥和CA证书
 
@@ -314,7 +314,7 @@
    
    + 根据用户的ip地址
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-04-02_14-56-06.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-04-02_14-56-06.png)
 
    
 

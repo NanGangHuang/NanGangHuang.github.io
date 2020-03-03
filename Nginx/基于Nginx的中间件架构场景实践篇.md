@@ -103,7 +103,7 @@
 
    如图：
 
-   ![](https://nanganghuang.github.io/image/2019-03-25.png)
+   ![](https://nanganghuang.github.io/Nginx/img/2019-03-25.png)
 
 *  配置语法 - expires
    
@@ -369,7 +369,7 @@
 
 *  代理缓存
 
-   ![](https://nanganghuang.github.io/image/Snipaste_2019-03-29_14-54-58.png)
+   ![](https://nanganghuang.github.io/Nginx/img/Snipaste_2019-03-29_14-54-58.png)
 
 *  proxy_cache配置语法
 
