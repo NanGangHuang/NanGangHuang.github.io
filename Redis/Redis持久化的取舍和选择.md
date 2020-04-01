@@ -19,7 +19,7 @@
    |   优点   |    不会消耗额外内存  |  不阻塞客户端命令    |
    |   缺点   |   阻塞客户端命令   |   需要fork,消耗内存   |
    
-    ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_15-51-27.png)
+ ![](https://nanganghuang.github.io/Redis/img/Snipaste_2019-07-07_15-51-27.png)
    
 +  `RDB`总结  
    1.`RDB`是`Redis`内存到硬盘的快照，用于持久化。  
