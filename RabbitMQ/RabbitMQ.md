@@ -78,8 +78,10 @@ Exchange和Queue,同一个Virtual Host里面不能有相同名称的Exchange或Q
 
 ## RabbitMQ整体架构是什么样子的？
 
-## RabbitMQ安装与使用
+<img src="img/Screenshot_20200507_203011_com.baidu.netdisk.jpg" text-align="center"></img>
 
+## RabbitMQ安装与使用
+    
 [RabbitMQ安装与使用](https://juejin.im/post/5c454daf518825265c2fedb9)
 
 + 服务的启动： rabbitmq-server start &
