@@ -51,7 +51,7 @@ RabbitMQ是使用Erlang语言来编写的，并且RabbitMQ是基于AMQP协议的
 + AMQP定义：是具有现代特征的二进制协议。是一个提供统一消息服务的应用层标准高级消息队列协议，
 是应用层协议的一个开放标准，为面向消息的中间件设计。
 
-<img src="img/Snipaste_2020-02-22_22-40-39.png" text-align="center"></img>
+<div align="center"><img src="https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-22_22-40-39.png" ></img></div>
 
 ## AMQP核心概念
 
@@ -78,7 +78,7 @@ Exchange和Queue,同一个Virtual Host里面不能有相同名称的Exchange或Q
 
 ## RabbitMQ整体架构是什么样子的？
 
-<img src="img/Screenshot_20200507_203011_com.baidu.netdisk.jpg" text-align="center"></img>
+<div align="center"><img src="https://nanganghuang.github.io/RabbitMQ/img/Screenshot_20200507_203011_com.baidu.netdisk.jpg" ></img></div>
 
 ## RabbitMQ安装与使用
     
