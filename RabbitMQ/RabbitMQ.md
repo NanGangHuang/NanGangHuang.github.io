@@ -92,6 +92,8 @@ Exchange和Queue,同一个Virtual Host里面不能有相同名称的Exchange或Q
 
 + 访问地址：[http://192.168.11.76:15672/](http://192.168.11.76:15672/)
 
+修改主机名：`vim /etc/hostname`
+
 ## 命令行与管控台-基础操作
 
 + rabbitmqctl stop_app:关闭应用
@@ -162,7 +164,7 @@ beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
 
 + Exchange:接受消息，并根据路由键转发消息所绑定的队列
 
-![](https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_15-37-20.png)
+<div align="center"><img src="https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-02-24_15-37-20.png" ></img></div>
 
 #### 交换机属性
 
@@ -252,3 +254,39 @@ beam    22530 rabbitmq   48u  IPv6 27530710      0t0  TCP *:amqp (LISTEN)
  + 一个Virtual Host里面可以有诺干个Exchange和Queue
  
  + 同一个Virtual Host里面不能有相同名称的Exchange或Queue
+   
+ ## 消息如何保障100%投递成功
+ 
+ 什么是生产端的可靠性投递
+ 
++ 保障消息的成功发出
++ 保障MQ节点的成功接收
++ 发送端收到MQ节点（Broker）确认应答
++ 完善的消息进行补偿机制   
+
+BAT/TMD互联网大厂的解决方案
+
++ 消息落库，对消息状态进行打标
+
++ 消息的延迟投递，做二次确认，回调检查
+
+<div align="center"><img src="https://nanganghuang.github.io/RabbitMQ/img/Snipaste_2020-07-28_21-40-02.png" ></img></div>
+
+## 幂等性概念
+ 
+ 在海量订单产生的业务高峰期，如何避免消息的重复消费问题？
+ 
+ 业界主流的幂等性操作
+ 
+ + 唯一ID+指纹码机制，利用数据库主键去重
+ 
+ + 利用Redis原子性去实现
+ 
+ ## Confirm确认消息
+ 
+ 理解Confirm消息确认机制：
+ 
+ + 消息的确认，是指生产者投递消息后，如果Broker收到消息，则会给我们生产者一个应答。
+ + 生产者进行接收应答，用来确定这条消息是否正常的发送到Broker，这种方式也是消息的可靠性投递的核心保障！
+ 
+ 
