@@ -1,6 +1,6 @@
 ## 如何设计一个关系型数据库
 
-![](https://nanganghuang.github.io/SQL/img/1.png)
+![](https://nanganghuang.github.io/SQL/img/8.png)
 
 ## 为什么要使用索引
 
