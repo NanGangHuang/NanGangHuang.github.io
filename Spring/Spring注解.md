@@ -30,15 +30,28 @@
 
 > [慕课网_《2小时学会SpringBoot》学习总结](https://segmentfault.com/a/1190000008398892)
 
-```java
+```
 @Controller：处理http请求
 @RestController:Spring4之后新的注解，返回json需要@ResponseBody与@Controller
 @RequestMapping:配置url映射
 ```
 处理请求中的参数
-```java
+```
 @PathVariable:获取url中的数据
 @RequestParam:获取请求参数的值
 @GetMapping:组合注解
 ```
 
+```
+@RequestMapping("/test")
+@RequestBody
+//property 文件中配置,如何在java代码中获取
+//name:zhangsan
+@Value("${name}")
+private String name;
+```
+
+```
+@ConfigurationProperties
+通过注解@ConfigurationPPProperties(prefix=“配置文件的前缀”)可以将配置文件中的配置自动与实体进行映射。
+```

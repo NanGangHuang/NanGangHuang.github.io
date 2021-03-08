@@ -19,3 +19,7 @@
 1.配置：Spring Bean 来源  
 2.推断：Web 应用类型和主引导类（Main Class）  
 3.加载：应用上下文初始器和应用事件监听器  
+
+
+#### property 里面的值
+E:\repository\org\springframework\boot\spring-boot-autoconfigure\2.3.0.RELEASE\spring-boot-autoconfigure-2.3.0.RELEASE.jar!\META-INF\spring-configuration-metadata.json

@@ -8,13 +8,13 @@ https://docs.docker.com/engine/install/centos/
 
 
 
-## 创建并运行docker容器
+#### 创建并运行docker容器
 
 ```
 docker run --name bob_the_cantainer -i -t ubuntu /bin/bash
 ```
 
-## 运行Docker容器
+#### 运行Docker容器
 
 ```
 docker ps
@@ -26,7 +26,7 @@ or
 docker start aa3f3650f4e
 ```
 
-## 删除docker容器
+#### 删除docker容器
 
 ```
 #删除单个容器
@@ -38,12 +38,17 @@ docker rm -f 80430f8d0921
 docker rm `docker ps -a -q`
 ```
 
-## 查找docker容器
+#### 查找docker容器
 
 ```
-#查找所有docker容器
-docker ps -a
+    ```
+
+#### 列出docker image
+
 ```
+docker image ls
+```
+
 
 ## Dockerfile语法梳理及最佳实践
 
