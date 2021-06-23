@@ -103,3 +103,31 @@ E:\repository\org\springframework\boot\spring-boot-autoconfigure\2.3.0.RELEASE\s
 + 如何自定义实现系统初始化器？
 
 + 自定义实现系统初始化器有哪些注意事项？
+
+
+## 监听器
+
+#### 监听器模式要素
+
++ 事件
++ 监听器
++ 广播器
++ 触发机制
+
+
+#### SpringBoot监听器实现
+
+#### 面试题
+
+
++ 介绍下监听器模式
+
++ SpringBoot 关于监听器相关实现类有哪些
+
++ SpringBoot框架有哪些框架事件以及他们的顺序
+
++ 介绍下监听事件触发机制？
+
++ 如何自定义实现系统监听器及注意事项？
+
++ 实现ApplicationListener接口与SmartApplicationListener的区别

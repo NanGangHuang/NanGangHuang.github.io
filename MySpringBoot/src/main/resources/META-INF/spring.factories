@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationContextInitializer=springbootproject.springboot.initializer.FirstInitializer
